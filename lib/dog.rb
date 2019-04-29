@@ -8,10 +8,8 @@ class Dog
 
   def initialize(name)
     @name = name
-    @@all << @name #depending on what I shovel I fail one of two tests
-                   #@name/name fails the .new) adds the new dog to the @@all array
-                   #self fails .all)is a class method that puts out the name of each dog to the terminal
-                   #because it puts out the computer memory values
+    @@all << self #Took me a while to figure out I needed to enumerate over
+                  #the @@all array to puts the .name 
   end
 
   def name
@@ -23,9 +21,11 @@ class Dog
   end
 
   def self.all
-    puts @@all
-  end
+    @@all.each do |dog|
+      puts dog.name
+    end
 
+  end
 end
 
 # fido = Dog.new("Fido")
