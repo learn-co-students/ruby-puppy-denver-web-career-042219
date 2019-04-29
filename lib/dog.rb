@@ -1,7 +1,6 @@
 require "pry"
 
 class Dog
-  attr_writer
   attr_reader :name
   attr_accessor :all
 
